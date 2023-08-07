@@ -13,8 +13,6 @@ int check_cycle(listint_t *list)
 	listint_t *last;
 
 	last = list;
-	if (list->next == NULL)
-		return (1);
 	while (last)
 	{
 		if (last->next == list)
