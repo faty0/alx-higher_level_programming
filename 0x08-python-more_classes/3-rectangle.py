@@ -86,8 +86,10 @@ class Rectangle:
         '''
         Returns an user-friendly string representation of Rectangle
         '''
-        for _ in range(self.__height):
-            for _ in range(self.__width):
-                print("#", end="")
-            print()
+        if (self.__width != 0 and self.__height != 0):
+            for i in range(self.__height):
+                for _ in range(self.__width):
+                    print("#", end="")
+                if i < (self.__height - 1):
+                    print()
         return ""
