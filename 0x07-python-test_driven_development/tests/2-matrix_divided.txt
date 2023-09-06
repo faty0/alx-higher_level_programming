@@ -1,0 +1,61 @@
+The ''2-matrix_divided.py'' module
+==================================
+
+Using ''matrix_divided''
+========================
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+    USE IT:
+	=======
+
+    Case 1:
+	>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
+	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+    
+    Case 2:
+    >>> matrix_divided([[]], 5)
+    [[]]
+
+    Case 3:
+    >>> matrix_divided([["hello", 3], [4, "baby"]], 2) # doctest: +NORMALIZE_WHITESPACE
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    Case 4:
+	>>> matrix_divided([[1, 2, 3], [4, 5]], 2)
+	Traceback (most recent call last):
+	...
+	TypeError: Each row of the matrix must have the same size
+    
+	Case 5:
+    >>> matrix_divided([[3, 4, 5], [2, 7, 8]], "div")
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number
+
+    Case 6:
+    >>> matrix_divided([[1, 1], [5, 5]], 0)
+    Traceback (most recent call last):
+    ...
+    ZeroDivisionError: division by zero
+
+    Case 7:
+    >>> matrix_divided([[-1, -2, -3], [4, -5, 6]], 3)
+    [[-0.33, -0.67, -1.0], [1.33, -1.67, 2.0]]
+    
+    Case 8:
+	>>> matrix_divided([[1, 2, 3], [4, 5, 6]], -3)
+	[[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0]]
+
+    Case 9:
+	>>> matrix_divided([[1.43, 2.11, 3.7], [4.5, 5.90, 6.7]], 1)
+	[[1.43, 2.11, 3.7], [4.5, 5.9, 6.7]]
+
+    Case 10:
+	>>> matrix_divided([[1, 2], [4, 7]], 3.5)
+	[[0.29, 0.57], [1.14, 2.0]]
+
+	Case 11:
+    >>> matrix_divided([[1]], 1)
+    [[1.0]]
