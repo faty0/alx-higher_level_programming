@@ -59,3 +59,9 @@ Using ''matrix_divided''
 	Case 11:
     >>> matrix_divided([[1]], 1)
     [[1.0]]
+
+    Case 12:
+    >>> matrix_divided("somematri", 6) # doctest: +NORMALIZE_WHITESPACE
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
