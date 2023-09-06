@@ -17,7 +17,7 @@ Using ''matrix_divided''
     [[]]
 
     Case 3:
-    >>> matrix_divided([["hello", 3], [4, "baby"]], 2) # doctest: +NORMALIZE_WHITESPACE
+    >>> matrix_divided([["hello", 3], [4, "baby"]], 2)
     Traceback (most recent call last):
     ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
@@ -61,7 +61,7 @@ Using ''matrix_divided''
     [[1.0]]
 
     Case 12:
-    >>> matrix_divided("somematri", 6) # doctest: +NORMALIZE_WHITESPACE
+    >>> matrix_divided("somematri", 6)
     Traceback (most recent call last):
     ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats

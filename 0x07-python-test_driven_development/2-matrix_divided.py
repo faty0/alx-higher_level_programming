@@ -6,14 +6,14 @@
 def matrix_divided(matrix, div):
     """a function that divides all elements of a matrix
     """
+    stri = "matrix must be a matrix (list of lists) of integers/floats"
     new = [[]]
     if not all(
         isinstance(matrix, list) and
         all(isinstance(el, (int, float)) for el in row)
         for row in matrix
     ):
-        raise TypeError("matrix must be a matrix (list of lists) \
-                        of integers/floats")
+        raise TypeError(stri)
     for row in matrix:
         if len(row) != len(matrix[0]):
             raise TypeError("Each row of the matrix must have the same size")
