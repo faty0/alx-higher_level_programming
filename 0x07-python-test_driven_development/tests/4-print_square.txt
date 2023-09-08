@@ -1,0 +1,49 @@
+The "4-print_square.py"
+=======================
+
+Using ''print_square''
+=====================
+	>>> print_square = __import__("4-print_square").print_square
+
+USE IT
+======
+	Case 1:
+	>>> print_square(4)
+	####
+	####
+	####
+	####
+
+	Case 2:
+	>>> print_square(-1)
+	Traceback (most recent call last):
+	...
+	ValueError: size must be >= 0
+
+	Case 3:
+	>>> print_square(3.50)
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+	Case 4:
+	>>> print_square(-3.50)
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+	Case 5:
+	>>> print_square("h")
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+	Case 6:
+	>>> print_square()
+	Traceback (most recent call last):
+	...
+	TypeError: print_square() missing 1 required positional argument: 'size'
+
+	Case 7:
+	>>> print_square(0)
+	
