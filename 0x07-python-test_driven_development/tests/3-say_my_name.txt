@@ -1,0 +1,33 @@
+The ''3-say_my_name.py'' module
+==================================
+
+Using ''say_my_name''
+========================
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+    USE IT:
+	=======
+
+    Case 1:
+	>>> say_my_name("Ayoub", "Zakarya")
+	My name is Ayoub Zakarya
+
+    Case 2:
+	>>> say_my_name("Ayoub")
+	My name is Ayoub 
+
+    Case 3:
+	>>> say_my_name("", "") # doctest: +NORMALIZE_WHITESPACE
+	My name is 
+
+    Case 4:
+	>>> say_my_name(3, "Zakarya")
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+    Case 5:
+	>>> say_my_name("Ayoub", 5)
+	Traceback (most recent call last):
+	...
+	TypeError: last_name must be a string
