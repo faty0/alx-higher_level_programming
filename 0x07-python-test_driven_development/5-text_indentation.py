@@ -20,9 +20,8 @@ def text_indentation(text):
             if (text[i] != " "):
                 new += text[i]
         else:
-            if (found == 1 and text[i] == " "):
-                pass
-            else:
-                new += text[i]
+            new += text[i]
+            if (found == 1):
+                new = new.rstrip(' ')
                 found = 0
     print(new)
