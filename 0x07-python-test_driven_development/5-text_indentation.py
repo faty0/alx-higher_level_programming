@@ -12,16 +12,11 @@ def text_indentation(text):
 
     marks = [".", "?", ":"]
     new = ""
-    found = 0
     for i in range(0, len(text)):
         if ((i > 0) and (text[i - 1] in marks)):
-            found = 1
             new += "\n\n"
             if (text[i] != " "):
                 new += text[i]
         else:
             new += text[i]
-            if (found == 1):
-                new = new.rstrip(' ')
-                found = 0
     print(new)
