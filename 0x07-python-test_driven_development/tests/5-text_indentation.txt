@@ -48,3 +48,15 @@ USE IT:
 	Traceback (most recent call last):
 	...
 	TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+	Case 4:
+	>>> text_indentation("Hello.world")
+	Hello.
+	<BLANKLINE>
+	world
+
+	Case 5:
+	>>> text_indentation("My father is awesome. you have no idea!")
+	My father is awesome.
+	<BLANKLINE>
+	you have no idea!
