@@ -52,3 +52,15 @@ USE IT:
 	How are you:
 	<BLANKLINE>
 	John
+
+	Case 4:
+	>>> text_indentation()
+	Traceback (most recent call last):
+	...
+	TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+	Case 5:
+	>>> text_indentation("Holberton.School")
+	Holberton.
+	<BLANKLINE>
+	School

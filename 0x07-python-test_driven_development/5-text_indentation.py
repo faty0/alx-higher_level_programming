@@ -15,5 +15,7 @@ def text_indentation(text):
         if ((i > 0) and (text[i - 1] in marks)):
             print()
             print()
+            if (text[i] != " "):
+                print(text[i], end="")
         else:
             print(text[i], end="")
