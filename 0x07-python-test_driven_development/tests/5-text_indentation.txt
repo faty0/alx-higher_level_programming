@@ -60,3 +60,9 @@ USE IT:
 	My father is awesome.
 	<BLANKLINE>
 	you have no idea!
+
+	Case 6:
+	>>> text_indentation("Hello! I love My name:   faty")
+	Hello! I love My name:
+	<BLANKLINE>
+	faty
