@@ -44,3 +44,24 @@ USE IT:
 	Case 6:
 	>>> list_o.print_sorted()
 	[4]
+
+	>>> list_o.clear()
+	>>> list_o.extend([1, 1, 1, 1])
+
+	Case 7:
+	>>> list_o.print_sorted()
+	[1, 1, 1, 1]
+
+	>>> list_o.clear()
+	>>> list_o.extend([1, 2, 3, 4])
+
+	Case 8:
+	>>> list_o.print_sorted()
+	[1, 2, 3, 4]
+
+	>>> list_o.clear()
+	>>> list_o.extend([4, 2, 2, 1, 5])
+
+	Case 9:
+	>>> list_o.print_sorted()
+	[1, 2, 2, 4, 5]
