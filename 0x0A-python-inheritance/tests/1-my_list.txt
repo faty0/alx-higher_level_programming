@@ -1,0 +1,46 @@
+The "1-my_list" module
+======================
+
+Using ''MyList''
+================
+	>>> list_o = __import__("1-my_list").MyList()
+
+USE IT:
+======
+	Case 1:
+	>>> list_o.print_sorted()
+	[]
+
+	>>> list_o.extend([1, 4, 2, 3, 5])
+
+	Case 2:
+	>>> list_o.print_sorted()
+	[1, 2, 3, 4, 5]
+
+	>>> list_o.clear()
+	>>> list_o.extend([-1, 6, -4, 10, 3])
+
+	Case 3:
+	>>> list_o.print_sorted()
+	[-4, -1, 3, 6, 10]
+
+	>>> list_o.clear()
+	>>> list_o.extend([-1.5, 6, -4, 10.5, 3])
+
+	Case 4:
+	>>> list_o.print_sorted()
+	[-4, -1.5, 3, 6, 10.5]
+
+	>>> list_o.clear()
+	>>> list_o.extend([1.5, 6.4, 4, 10.1, 3])
+
+	Case 5:
+	>>> list_o.print_sorted()
+	[1.5, 3, 4, 6.4, 10.1]
+
+	>>> list_o.clear()
+	>>> list_o.extend([4])
+
+	Case 6:
+	>>> list_o.print_sorted()
+	[4]
