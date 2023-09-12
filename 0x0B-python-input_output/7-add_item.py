@@ -18,5 +18,4 @@ if path.exists("add_item.json"):
         my_list.append(argv[i])
     save_to_json_file(my_list, "add_item.json")
 else:
-    mknod("add_item.json")
     save_to_json_file(my_list, "add_item.json")
