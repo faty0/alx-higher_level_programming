@@ -14,7 +14,8 @@ class Student:
     def to_json(self, attrs=None):
         dict = self.__dict__
         dict1 = {}
-        if attrs:
+        if (isinstance(attrs, list) and
+                all(isinstance(att, str) for att in attrs)):
             for k, v in dict.items():
                 if k in attrs:
                     dict1[k] = v
