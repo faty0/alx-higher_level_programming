@@ -5,7 +5,6 @@ and then save them to a file
 
 
 from sys import argv
-from os import path, mknod
 
 
 save_to_json_file = __import__("5-save_to_json_file").save_to_json_file
