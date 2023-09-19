@@ -5,7 +5,15 @@
 
 class Rectangle(Base):
     ''' class that inherits from Base
+
+    Attributes:
+        __width (int): The width of the rectangle.
+        __height (int): The height of the rectangle.
+        __x (int): The x-coordinate of the rectangle's position.
+        __y (int): The y-coordinate of the rectangle's position.
+        id (int): The unique identifier of the rectangle.
     '''
+
     def __init__(self, width, height, x=0, y=0, id=None):
         ''' Initializes a Rectangle object.
         '''
