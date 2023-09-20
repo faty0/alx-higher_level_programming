@@ -101,9 +101,9 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(self.rec1.display(), dis)
         dis = "####\n####\n####\n####\n####\n####\n####\n####"
         self.assertEqual(self.rec2.display(), dis)
-        dis = "###\n###\n###\n###\n###\n###\n###\n###\n###"
+        dis = "\n\n\n   ###\n   ###\n   ###\n   ###\n   ###\n   ###\n   ###\n   ###\n   ###"
         self.assertEqual(self.rec3.display(), dis)
-        dis = "##\n##"
+        dis = "\n\n\n\n   ##\n   ##"
         self.assertEqual(self.rec4.display(), dis)
 
     def test_str(self):

@@ -128,9 +128,10 @@ class Rectangle(Base):
     def display(self):
         ''' prints in stdout the Rectangle instance with the character #
         '''
-        dis = "\n".join(["#" * self.width] * self.height)
+        dis = "\n".join([(" " * self.x) + "#" * self.width] * self.height)
+        print("\n" * self.y, end="")
         print(dis)
-        return dis
+        return ("\n" * self.y) + dis
 
     def __str__(self):
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(
