@@ -142,12 +142,14 @@ class Rectangle(Base):
         '''
         for i in range(0, len(args)):
             if i == 0:
-                self.width = args[i]
-            if i == 1:
-                self.height = args[i]
-            if i == 2:
-                self.x = args[i]
-            if i == 3:
-                self.y = args[i]
-            if i == 4:
                 self.id = args[i]
+            if i == 1:
+                self.width = args[i]
+            if i == 2:
+                self.height = args[i]
+            if i == 3:
+                self.x = args[i]
+            if i == 4:
+                self.y = args[i]
+            
+                
