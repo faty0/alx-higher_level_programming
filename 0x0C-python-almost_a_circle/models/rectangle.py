@@ -126,6 +126,8 @@ class Rectangle(Base):
         return (self.width * self.height)
 
     def display(self):
+        ''' prints in stdout the Rectangle instance with the character #
+        '''
         dis = "\n".join(["#" * self.width] * self.height)
         print(dis)
         return dis
