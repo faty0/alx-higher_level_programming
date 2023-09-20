@@ -17,4 +17,7 @@ class TestBase(unittest.TestCase):
         self.assertEqual(self.inst2.id, 5)
 
     def tearDown(self):
-        pass
+        self.inst1 = None
+        self.inst2 = None
+        self.inst3 = None
+        Base.__nb_objects = 0

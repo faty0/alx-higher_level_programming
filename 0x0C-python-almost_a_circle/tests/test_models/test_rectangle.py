@@ -3,6 +3,7 @@
 import unittest
 
 from models.rectangle import Rectangle
+from models.base import Base
 
 
 class TestRectangle(unittest.TestCase):
@@ -12,11 +13,11 @@ class TestRectangle(unittest.TestCase):
         self.rec3 = Rectangle(3, 9, 3, 3)
         self.rec4 = Rectangle(2, 2, 3, 4, 5)
 
-    """ def test_id(self):
+    def test_id(self):
         self.assertEqual(self.rec1.id, 4)
-        self.assertEqual(self.rec2.id, 3)
-        self.assertEqual(self.rec3.id, 4)
-        self.assertEqual(self.rec4.id, 5) """
+        self.assertEqual(self.rec2.id, 7)
+        self.assertEqual(self.rec3.id, 8)
+        self.assertEqual(self.rec4.id, 5)
 
     def test_width(self):
         self.assertEqual(self.rec1.width, 5)
@@ -127,4 +128,10 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(self.rec3.__str__(), "[Rectangle] (77) 10/8 - 2/6")
 
     def tearDown(self):
-        pass
+        self.squ1 = None
+        self.squ2 = None
+        self.squ3 = None
+        self.squ4 = None
+        self.squ5 = None
+        self.squ6 = None
+        Base.__nb_objects = 0
