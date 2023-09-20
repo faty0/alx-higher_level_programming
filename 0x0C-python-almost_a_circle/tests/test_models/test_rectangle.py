@@ -106,5 +106,10 @@ class TestRectangle(unittest.TestCase):
         dis = "##\n##"
         self.assertEqual(self.rec4.display(), dis)
 
+    def test_str(self):
+        self.assertEqual(self.rec1.__str__(), "[Rectangle] (4) 0/0 - 5/6")
+        self.assertEqual(self.rec2.__str__(), "[Rectangle] (9) 0/0 - 4/8")
+        self.assertEqual(self.rec3.__str__(), "[Rectangle] (10) 3/3 - 3/9")
+        self.assertEqual(self.rec4.__str__(), "[Rectangle] (5) 3/4 - 2/2")
     def tearDown(self):
         pass

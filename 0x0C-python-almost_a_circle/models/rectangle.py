@@ -131,3 +131,7 @@ class Rectangle(Base):
         dis = "\n".join(["#" * self.width] * self.height)
         print(dis)
         return dis
+
+    def __str__(self):
+        return ("[Rectangle] ({}) {}/{} - {}/{}".format(
+            self.id, self.x, self.y, self.width, self.height))
