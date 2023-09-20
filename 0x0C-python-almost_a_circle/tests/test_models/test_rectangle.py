@@ -111,5 +111,14 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(self.rec2.__str__(), "[Rectangle] (9) 0/0 - 4/8")
         self.assertEqual(self.rec3.__str__(), "[Rectangle] (10) 3/3 - 3/9")
         self.assertEqual(self.rec4.__str__(), "[Rectangle] (5) 3/4 - 2/2")
+
+    def test_update(self):
+        self.rec1.update(1, 1, 0, 0, 0)
+        self.assertEqual(self.rec1.__str__(), "[Rectangle] (0) 0/0 - 1/1")
+        self.rec2.update(1, 1)
+        self.assertEqual(self.rec2.__str__(), "[Rectangle] (11) 0/0 - 1/1")
+        self.rec3.update(1, 1, 0, 0)
+        self.assertEqual(self.rec3.__str__(), "[Rectangle] (12) 0/0 - 1/1")
+
     def tearDown(self):
         pass
