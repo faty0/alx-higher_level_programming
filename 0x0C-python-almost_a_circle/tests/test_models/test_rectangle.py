@@ -90,5 +90,11 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(self.rec3.y, 4)
         self.assertEqual(self.rec4.y, 5)
 
+    def test_area(self):
+        self.assertEqual(self.rec1.area(), 30)
+        self.assertEqual(self.rec2.area(), 32)
+        self.assertEqual(self.rec3.area(), 27)
+        self.assertEqual(self.rec4.area(), 4)
+
     def tearDown(self):
         pass
