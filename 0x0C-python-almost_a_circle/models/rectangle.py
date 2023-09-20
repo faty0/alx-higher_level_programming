@@ -37,7 +37,7 @@ class Rectangle(Base):
             self.__height = height
 
         ''' validating x '''
-        if (not isinstance(valxue, int)):
+        if (not isinstance(x, int)):
             raise TypeError("x must be an integer")
         elif x < 0:
             raise ValueError("x must be >= 0")
