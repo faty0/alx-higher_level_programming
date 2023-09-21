@@ -2,6 +2,7 @@
 ''' a module that contains the Base class
 '''
 import json
+import csv
 
 
 class Base:
@@ -67,4 +68,29 @@ class Base:
                 my_objects.append(obje)
             return my_objects
         except FileNotFoundError as e:
+            return my_objects
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        filename = "{}.csv".format(cls.__name__)
+        with open(filename, mode='w', newline='') as file:
+            writer = csv.writer(file)
+            for obj in list_objs:
+                data = obj.to_csv_string()
+                writer.writerow([cls.__name__, data])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        filename = "{}.csv".format(cls.__name__)
+        my_objects = []
+        try:
+            with open(filename, mode='r') as file:
+                reader = csv.reader(file)
+                for row in reader:
+                    class_name, data = row
+                    if class_name == cls.__name__:
+                        obj = cls.create(**cls.from_csv_string(data))
+                        my_objects.append(obj)
+            return my_objects
+        except FileNotFoundError:
             return my_objects

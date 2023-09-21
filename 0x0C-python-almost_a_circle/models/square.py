@@ -59,3 +59,13 @@ class Square(Rectangle):
             'y': self.y
         }
         return dict
+
+    def to_csv_string(self):
+        '''Converts object attributes to a CSV string'''
+        return "{},{},{},{}".format(self.id, self.size, self.x, self.y)
+
+    @staticmethod
+    def from_csv_string(csv_string):
+        '''Parses a CSV string and returns a dictionary of attributes'''
+        id, size, x, y = map(int, csv_string.split(','))
+        return {'id': id, 'size': size, 'x': x, 'y': y}
