@@ -59,6 +59,24 @@ class TestSquare(unittest.TestCase):
         with self.assertRaises(ValueError):
             squ6 = Square(7, 3, -4)
 
+    def test_size(self):
+        self.assertEqual(self.squ1.size, 5)
+        self.assertEqual(self.squ2.size, 4)
+        self.assertEqual(self.squ3.size, 3)
+        self.assertEqual(self.squ4.size, 2)
+        with self.assertRaises(TypeError):
+            squ5 = Square('w', 2, 3)
+        with self.assertRaises(ValueError):
+            squ6 = Square(-7, 2, 3)
+        self.squ1.size = 10
+        self.squ2.size = 20
+        self.squ3.size = 30
+        self.squ4.size = 40
+        self.assertEqual(self.squ1.size, 10)
+        self.assertEqual(self.squ2.size, 20)
+        self.assertEqual(self.squ3.size, 30)
+        self.assertEqual(self.squ4.size, 40)
+
     def tearDown(self):
         self.squ1 = None
         self.squ2 = None
