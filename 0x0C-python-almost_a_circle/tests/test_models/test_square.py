@@ -77,6 +77,20 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(self.squ3.size, 30)
         self.assertEqual(self.squ4.size, 40)
 
+    def test_update(self):
+        self.squ1.update(1, 1, 3, 4)
+        self.assertEqual(self.squ1.__str__(), "[Square] (1) 3/4 - 1")
+        self.squ2.update(1)
+        self.assertEqual(self.squ2.__str__(), "[Square] (1) 8/0 - 4")
+        self.squ3.update(1, 1, 1)
+        self.assertEqual(self.squ3.__str__(), "[Square] (1) 1/3 - 1")
+        self.squ3.update(89)
+        self.assertEqual(self.squ3.__str__(), "[Square] (89) 1/3 - 1")
+        self.squ3.update(id=77, size=2, x=8, y=8)
+        self.assertEqual(self.squ3.__str__(), "[Square] (77) 8/8 - 2")
+        self.squ3.update(size=6, x=10)
+        self.assertEqual(self.squ3.__str__(), "[Square] (77) 10/8 - 6")
+
     def tearDown(self):
         self.squ1 = None
         self.squ2 = None
