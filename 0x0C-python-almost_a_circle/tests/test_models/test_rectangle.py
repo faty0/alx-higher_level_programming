@@ -109,8 +109,8 @@ class TestRectangle(unittest.TestCase):
 
     def test_str(self):
         self.assertEqual(self.rec1.__str__(), "[Rectangle] (4) 0/0 - 5/6")
-        self.assertEqual(self.rec2.__str__(), "[Rectangle] (15) 0/0 - 4/8")
-        self.assertEqual(self.rec3.__str__(), "[Rectangle] (16) 3/3 - 3/9")
+        self.assertEqual(self.rec2.__str__(), "[Rectangle] (19) 0/0 - 4/8")
+        self.assertEqual(self.rec3.__str__(), "[Rectangle] (20) 3/3 - 3/9")
         self.assertEqual(self.rec4.__str__(), "[Rectangle] (5) 3/4 - 2/2")
 
     def test_update(self):
@@ -135,6 +135,22 @@ class TestRectangle(unittest.TestCase):
             'x': 0,
             'y': 0
         })
+
+    def test_save_to_file(self):
+        r1 = Rectangle(10, 7, 2, 8)
+        r2 = Rectangle(2, 4)
+        Rectangle.save_to_file([r1, r2])
+        with open("Rectangle.json", 'r') as f:
+            content = f.read()
+        self.assertEqual(content, '[{"id": 17, "width": 10, "height": 7, "x": 2, "y": 8}, {"id": 18, "width": 2, "height": 4, "x": 0, "y": 0}]')
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", 'r') as f:
+            content = f.read()
+        self.assertEqual(content, '[]')
+        Rectangle.save_to_file()
+        with open("Rectangle.json", 'r') as f:
+            content = f.read()
+        self.assertEqual(content, '[]')
 
     def tearDown(self):
         del self.rec1

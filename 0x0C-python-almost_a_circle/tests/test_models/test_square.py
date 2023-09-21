@@ -15,9 +15,9 @@ class TestSquare(unittest.TestCase):
 
     def test_id(self):
         self.assertEqual(self.squ1.id, 4)
-        self.assertEqual(self.squ2.id, 29)
+        self.assertEqual(self.squ2.id, 33)
         self.assertEqual(self.squ3.id, 3)
-        self.assertEqual(self.squ4.id, 30)
+        self.assertEqual(self.squ4.id, 34)
 
     def test_width(self):
         self.assertEqual(self.squ1.width, 5)
@@ -98,6 +98,22 @@ class TestSquare(unittest.TestCase):
             'x': 6,
             'y': 0
         })
+
+    def test_save_to_file(self):
+        s1 = Square(10, 7, 2, 8)
+        s2 = Square(2, 4)
+        Square.save_to_file([s1, s2])
+        with open("Square.json", 'r') as f:
+            content = f.read()
+        self.assertEqual(content, '[{"id": 8, "size": 10, "x": 7, "y": 2}, {"id": 37, "size": 2, "x": 4, "y": 0}]')
+        Square.save_to_file([])
+        with open("Square.json", 'r') as f:
+            content = f.read()
+        self.assertEqual(content, '[]')
+        Square.save_to_file()
+        with open("Square.json", 'r') as f:
+            content = f.read()
+        self.assertEqual(content, '[]')
 
     def tearDown(self):
         del self.squ1
