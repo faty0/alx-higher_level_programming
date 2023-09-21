@@ -91,6 +91,14 @@ class TestSquare(unittest.TestCase):
         self.squ3.update(size=6, x=10)
         self.assertEqual(self.squ3.__str__(), "[Square] (77) 10/8 - 6")
 
+    def test_to_dictionary(self):
+        self.assertEqual(self.squ1.to_dictionary(), {
+            'id': 4,
+            'size': 5,
+            'x': 6,
+            'y': 0
+        })
+
     def tearDown(self):
         self.squ1 = None
         self.squ2 = None
