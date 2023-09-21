@@ -127,6 +127,15 @@ class TestRectangle(unittest.TestCase):
         self.rec3.update(height=6, x=10)
         self.assertEqual(self.rec3.__str__(), "[Rectangle] (77) 10/8 - 2/6")
 
+    def test_to_dictionary(self):
+        self.assertEqual(self.rec1.to_dictionary(), {
+            'id': 4,
+            'width': 5,
+            'height': 6,
+            'x': 0,
+            'y': 0
+        })
+
     def tearDown(self):
         self.squ1 = None
         self.squ2 = None

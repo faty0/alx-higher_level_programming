@@ -15,9 +15,9 @@ class TestSquare(unittest.TestCase):
 
     def test_id(self):
         self.assertEqual(self.squ1.id, 4)
-        self.assertEqual(self.squ2.id, 23)
+        self.assertEqual(self.squ2.id, 25)
         self.assertEqual(self.squ3.id, 3)
-        self.assertEqual(self.squ4.id, 24)
+        self.assertEqual(self.squ4.id, 26)
 
     def test_width(self):
         self.assertEqual(self.squ1.width, 5)
