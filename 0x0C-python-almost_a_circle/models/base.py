@@ -39,6 +39,6 @@ class Base:
     def from_json_string(json_string):
         ''' returns the list of the JSON string representation json_string '''
         my_list = []
-        if json_string is not None:
+        if isinstance(json_string, str) and json_string:
             my_list.append(json.loads(json_string))
         return my_list
