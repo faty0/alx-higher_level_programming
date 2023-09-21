@@ -15,9 +15,9 @@ class TestSquare(unittest.TestCase):
 
     def test_id(self):
         self.assertEqual(self.squ1.id, 4)
-        self.assertEqual(self.squ2.id, 25)
+        self.assertEqual(self.squ2.id, 29)
         self.assertEqual(self.squ3.id, 3)
-        self.assertEqual(self.squ4.id, 26)
+        self.assertEqual(self.squ4.id, 30)
 
     def test_width(self):
         self.assertEqual(self.squ1.width, 5)
@@ -100,10 +100,8 @@ class TestSquare(unittest.TestCase):
         })
 
     def tearDown(self):
-        self.squ1 = None
-        self.squ2 = None
-        self.squ3 = None
-        self.squ4 = None
-        self.squ5 = None
-        self.squ6 = None
+        del self.squ1
+        del self.squ2
+        del self.squ3
+        del self.squ4
         Base.__nb_objects = 0

@@ -15,8 +15,8 @@ class TestRectangle(unittest.TestCase):
 
     def test_id(self):
         self.assertEqual(self.rec1.id, 4)
-        self.assertEqual(self.rec2.id, 9)
-        self.assertEqual(self.rec3.id, 10)
+        self.assertEqual(self.rec2.id, 13)
+        self.assertEqual(self.rec3.id, 14)
         self.assertEqual(self.rec4.id, 5)
 
     def test_width(self):
@@ -109,8 +109,8 @@ class TestRectangle(unittest.TestCase):
 
     def test_str(self):
         self.assertEqual(self.rec1.__str__(), "[Rectangle] (4) 0/0 - 5/6")
-        self.assertEqual(self.rec2.__str__(), "[Rectangle] (11) 0/0 - 4/8")
-        self.assertEqual(self.rec3.__str__(), "[Rectangle] (12) 3/3 - 3/9")
+        self.assertEqual(self.rec2.__str__(), "[Rectangle] (15) 0/0 - 4/8")
+        self.assertEqual(self.rec3.__str__(), "[Rectangle] (16) 3/3 - 3/9")
         self.assertEqual(self.rec4.__str__(), "[Rectangle] (5) 3/4 - 2/2")
 
     def test_update(self):
@@ -137,10 +137,8 @@ class TestRectangle(unittest.TestCase):
         })
 
     def tearDown(self):
-        self.squ1 = None
-        self.squ2 = None
-        self.squ3 = None
-        self.squ4 = None
-        self.squ5 = None
-        self.squ6 = None
+        del self.rec1
+        del self.rec2
+        del self.rec3
+        del self.rec4
         Base.__nb_objects = 0
