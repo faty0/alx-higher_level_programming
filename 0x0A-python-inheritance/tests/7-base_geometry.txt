@@ -3,18 +3,19 @@ The "7-base_geometry" module
 
 USING ''BaseGeometry''
 =====================
-	>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry()
+	>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
 
 USE IT:
 ======
 	Case 1:
-	>>> rect = BaseGeometry("rectangle", o)
+	>>> rect = BaseGeometry()
+	>>> rect.integer_validator("rectangle", "o")
 	Traceback (most recent call last):
 	...
 	TypeError: rectangle must be an integer
 
 	Case 2:
-	>>> rect = BaseGeometry("rectangle", -7)
+	>>> rect.integer_validator("rectangle", -7)
 	Traceback (most recent call last):
 	...
 	ValueError: rectangle must be greater than 0
