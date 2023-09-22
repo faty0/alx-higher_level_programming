@@ -32,15 +32,51 @@ USE IT:
 	...
 	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
+	Case 5:
 	>>> rect.integer_validator("name")
 	Traceback (most recent call last):
 	...
 	TypeError: integer_validator() missing 1 required positional argument: 'value'
 
+	Case 6:
 	>>> rect.integer_validator("name", None)
 	Traceback (most recent call last):
 	...
 	TypeError: name must be an integer
 
+	Case 7:
 	>>> print(dir(rect))
 	['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'area', 'integer_validator']
+
+	Case 8:
+	>>> rect.integer_validator("rectangle", 0)
+	Traceback (most recent call last):
+	...
+	ValueError: rectangle must be greater than 0
+
+	Case 9:
+	>>> rect.integer_validator("rectangle", {3, 4})
+	Traceback (most recent call last):
+	...
+	TypeError: rectangle must be an integer
+
+	Case 10:
+	>>> rect.integer_validator("rectangle", True)
+	Traceback (most recent call last):
+	...
+	TypeError: rectangle must be an integer
+
+	Case 11:
+	>>> rect.integer_validator("rectangle", [4])
+	Traceback (most recent call last):
+	...
+	TypeError: rectangle must be an integer
+
+	Case 12:
+	>>> rect.integer_validator("rectangle", (3,))
+	Traceback (most recent call last):
+	...
+	TypeError: rectangle must be an integer
+
+	Case 13:
+	>>> rect.integer_validator("rectangle", 1)
