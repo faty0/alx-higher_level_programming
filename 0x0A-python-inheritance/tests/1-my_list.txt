@@ -45,9 +45,9 @@ USE IT:
 	>>> list_o.print_sorted()
 	[4]
 
-	>>> list_o.clear()
-	>>> list_o.extend([4, 6, 3, 2])
+	>>> print(list_o)
+	[4]
 
-	Case 7:
-	>>> list_o.print_sorted()
-	[2, 3, 4, 6]
+	>>> list_o.append(3)
+	>>> print(list_o)
+	[4, 3]
