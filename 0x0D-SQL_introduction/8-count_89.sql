@@ -1,4 +1,4 @@
 -- displays the number of records
 SELECT COUNT(*)
-FROM first_name
+FROM first_table
 where id = 89;
