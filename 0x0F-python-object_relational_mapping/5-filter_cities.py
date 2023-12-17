@@ -14,15 +14,17 @@ if __name__ == "__main__":
             db=s.argv[3],
             charset="utf8")
     cur = conn.cursor()
-    cur.execute("SELECT cities.name, cities.id FROM cities JOIN states ON \
-            states.id=cities.state_id WHERE states.name='{}' ORDER BY \
-            cities.id ASC".format(s.argv[4]))
-    query_res = cur.fetchall()
-    length = len(query_res)
-    for i, row in enumerate(query_res):
-        if i < length - 1:
-            print(row[0], end=", ")
-        else:
-            print(row[0])
+    sql_injects = ["TRUNCATE", "DELETE", ";"]
+    if all(c not in s.argv[4] for c in sql_injects):
+        cur.execute("SELECT cities.name, cities.id FROM cities JOIN states ON \
+                states.id=cities.state_id WHERE states.name='{}' ORDER BY \
+                cities.id ASC".format(s.argv[4]))
+        query_res = cur.fetchall()
+        length = len(query_res)
+        for i, row in enumerate(query_res):
+            if i < length - 1:
+                print(row[0], end=", ")
+            else:
+                print(row[0])
     cur.close()
     conn.close()
