@@ -15,11 +15,11 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
-    states = session.query(State).filter(State.id.like(1))
+    states = session.query(State).first()
     if not states:
         print("Nothing")
     else:
-        print("{}: {}".format(states[0].id, states[0].name))
+        print("{}: {}".format(states.id, states.name))
 
     session.close()
     engine.dispose()
