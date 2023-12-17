@@ -6,3 +6,4 @@ How to INSERT rows in a MySQL table from a Python script
 What ORM means
 How to map a Python Class to a MySQL table
 How to create a Python Virtual Environment
+
