@@ -9,8 +9,7 @@ if __name__ == "__main__":
             port=3306,
             user=s.argv[1],
             passwd=s.argv[2],
-            db=s.argv[3],
-            charset="utf8")
+            db=s.argv[3])
 
     cur = conn.cursor()
     cur.execute("SELECT * FROM states ORDER BY id ASC")
@@ -19,4 +18,3 @@ if __name__ == "__main__":
         print(row)
     cur.close()
     conn.close()
-
