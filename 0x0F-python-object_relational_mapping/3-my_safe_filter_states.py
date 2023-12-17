@@ -16,7 +16,7 @@ if __name__ == "__main__":
             db=s.argv[3],
             charset="utf8")
     cur = conn.cursor()
-    if "TRUNCATE" or "DELETE" not in s.argv[4]:
+    if "TRUNCATE" and "DELETE" not in s.argv[4]:
         cur.execute("SELECT * FROM states WHERE \
                 name='{}' ORDER BY id ASC".format(s.argv[4]))
         query_res = cur.fetchall()
